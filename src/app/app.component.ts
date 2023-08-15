@@ -15,6 +15,10 @@ export class AppComponent {
     age: 18,
     avatar: "https://i.blogs.es/aaaaee/greg/450_1000.webp"
   }
+
+  names: string[] = ['Nico', 'Juli', 'Santi', 'Tomas'];
+  newName = '';
+
   toggleButton() {
     this.btnDisabled = !this.btnDisabled;
   }
@@ -32,6 +36,14 @@ export class AppComponent {
     this.person.name = element.value;
   }
 
+  addName() {
+    this.names.push(this.newName);
+    this.newName = '';
+  }
+
+  deleteName(index: number) {
+    this.names.splice(index, 1);
+  }
 
 
 }
